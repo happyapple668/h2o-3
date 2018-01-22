@@ -24,7 +24,10 @@ whitelist = list(
   "installed package size" = c("installed size is .*Mb", # h2o.jar is installed
                                "sub-directories of 1Mb or more",
                                "java .*Mb"),
-  "Rd cross-references" = "Package unavailable to check Rd xrefs" # when linking documentation to optional deps not present at check time
+  "Rd cross-references" = "Package unavailable to check Rd xrefs", # when linking documentation to optional deps not present at check time
+  "Rd line widths" = c("Rd file 'h2o.abs.Rd':",
+                       "\examples lines wider than 100 characters:",
+                       "smtreesH2O <- h2o.importFile(\"https://s3.amazonaws.com/h2o-public-test-data/smalldata/gbm_test/smtrees.csv\")")
 )
 check_note <- function(details, whitelist, verbose=TRUE) {
   stopifnot(is.data.frame(details), is.list(whitelist))
